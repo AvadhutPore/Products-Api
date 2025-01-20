@@ -26,6 +26,20 @@ const productSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    images: {
+        type: [
+            {
+                id: { type: String, required: true },
+                width: { type: Number, required: true },
+                height: { type: Number, required: true },
+                url: { type: String, required: true },
+                filename: { type: String, required: true },
+                size: { type: Number, required: true },
+                type: { type: String, required: true }
+            }
+        ],
+        required: false // Optional: Set to `true` if this field must always be present
+    },
     description: {
         type: String,
         required: true,
